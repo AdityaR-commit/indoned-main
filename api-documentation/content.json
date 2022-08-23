@@ -1,0 +1,540 @@
+{
+	"last_updated": "2022-02-28 10:15:41",
+	"postman_collection": "https://www.getpostman.com/collections/5470be359740d9a33fac",
+	"available_indicator": true,
+	"update_notes": [
+		"POST data member.",
+		"Data Wilayah (Provinsi, Kabupaten / Kota, Kecamatan)"
+	],
+	"data": [
+		{
+			"section": "post-member-find",
+			"title": null,
+			"data": {
+				"method": "post",
+				"url": "/api/member/find",
+				"request": {
+					"format": "application/json",
+					"header": [
+						{
+							"key": "api_key",
+							"description": "<span class=\"badge badge-primary\">Token</span>"
+						},
+						{
+							"key": "Content-Type",
+							"description": "application/json"
+						}
+					],
+					"value": [
+						{
+							"key": "member_id",
+							"description": "Member ID"
+						},
+						{
+							"key": "nama",
+							"description": "Nama lengkap Member sesuai dengan yang terdata"
+						}
+					],
+					"example": {
+					    "member_id":"memberid",
+					    "nama":"Member satu"
+					}
+				},
+				"response": {
+					"format": "application/json",
+					"value": [
+						{
+							"key": "status",
+							"description": "Status Code tiap request (lihat status code)",
+							"note": ""
+						},
+						{
+							"key": "message",
+							"description": "Berisi pesan response",
+							"note": ""
+						},
+						{
+							"key": "data",
+							"description": "Data response",
+							"note": ""
+						}
+					],
+					"example": {
+						"status": "200",
+						"message": "Data ditemukan",
+						"data": {
+							"member_id": "memberid",
+							"nama": "Nama Member",
+							"nik": "351411520591XXXX",
+							"no_hp": "08988463XXX",
+							"tgl_lahir": "1991-04-29",
+							"kode_provinsi": "35",
+							"kode_kabupaten": "3514",
+							"kode_kecamatan": "3514120",
+							"alamat": "Wangi - sumberejo",
+							"alamat_domisili": "Dsn. Wangi - Ds. Sumberejo",
+							"email": "email3@gmail.com",
+							"member_type": "Distributor",
+							"custom_member": null,
+							"bank_type": "BCA",
+							"bank_no_rek": "55444444",
+							"bank_atas_nama": "Nama Member",
+							"parent_member_id": "20",
+							"status": "1",
+							"foto": "https://bgskin.online/public/uploads/member/220205082709.jpg"
+						}
+					}
+				}
+			}
+		},
+		{
+			"section": "post-token",
+			"title": null,
+			"data": {
+				"method": "post",
+				"url": "/api/Auth",
+				"request": {
+					"format": "application/json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"description": "application/json"
+						}
+					],
+					"value": [
+						{
+							"key": "username",
+							"description": "username user BG Skin, silahkan menghubungi Admin BG Skin"
+						},
+						{
+							"key": "password",
+							"description": "password user BG Skin, silahkan menghubungi Admin BG Skin"
+						}
+					],
+					"example": {
+						"username": "user1",
+						"password": "password1"
+					}
+				},
+				"response": {
+					"format": "application/json",
+					"value": [
+						{
+							"key": "status",
+							"description": "Status Code tiap request (lihat status code)",
+							"note": "User yang boleh login hanya yang memiliki role <b class='text-danger'>Pengguna API BG Skin</b>"
+						},
+						{
+							"key": "data",
+							"description": "Berisi data response",
+							"note": "Key ini akan diganti dengan 'error', jika terdapat error."
+						},
+						{
+							"key": "token",
+							"description": "JWT token yang dipakai untuk tiap request",
+							"note": ""
+						},
+						{
+							"key": "refresh_token",
+							"description": "Token yang dipakai untuk refresh (jika main token kadaluarsa)",
+							"note": ""
+						},
+						{
+							"key": "expires",
+							"description": "Waktu kadaluarsa token (dalam detik)",
+							"note": ""
+						}
+					],
+					"example": {
+						"status": "200",
+						"data": {
+							"token": "eyJ0exxx",
+							"refresh_token": "eyJ0exxx",
+							"expires": "3600"
+						}
+					}
+				}
+			}
+		},
+		{
+			"section": "refresh-token",
+			"title": null,
+			"data": {
+				"method": "post",
+				"url": "/api/Auth",
+				"request": {
+					"format": "application/json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"description": "application/json"
+						}
+					],
+					"value": [
+						{
+							"key": "refresh_token",
+							"description": "refresh token, didapat pada saat get token"
+						}
+					],
+					"example": {
+						"refresh_token": "eyJ0exxx"
+					}
+				},
+				"response": {
+					"format": "application/json",
+					"value": [
+						{
+							"key": "status",
+							"description": "Status Code tiap request (lihat status code)",
+							"note": "User yang boleh login hanya yang memiliki role <b class='text-danger'>Pengguna API BG Skin</b>"
+						},
+						{
+							"key": "data",
+							"description": "Berisi data response",
+							"note": "Key ini akan diganti dengan 'error', jika terdapat error."
+						},
+						{
+							"key": "token",
+							"description": "JWT token yang dipakai untuk tiap request",
+							"note": ""
+						},
+						{
+							"key": "refresh_token",
+							"description": "Token yang dipakai untuk refresh (jika main token kadaluarsa)",
+							"note": ""
+						},
+						{
+							"key": "expires",
+							"description": "Waktu kadaluarsa token (dalam detik)",
+							"note": ""
+						}
+					],
+					"example": {
+						"status": "200",
+						"data": {
+							"token": "eyJ0exxx",
+							"refresh_token": "eyJ0exxx",
+							"expires": "3600"
+						}
+					}
+				}
+			}
+		},
+		{
+			"section": "get-provinsi",
+			"title": "Referensi data provinsi",
+			"data": {
+				"method": "get",
+				"url": "/api/Ref/provinsi",
+				"request": {
+					"format": "application/json",
+					"header": [
+						{
+							"key": "api_key",
+							"description": "<span class=\"badge badge-primary\">Token</span>"
+						},
+						{
+							"key": "Content-Type",
+							"description": "application/json"
+						}
+					],
+					"value": [
+						{
+							"key": "-",
+							"description": "tidak ada parameter tambahan pada url"
+						}
+					],
+					"example": "/api/Ref/provinsi"
+				},
+				"response": {
+					"format": "application/json",
+					"value": [
+						{
+							"key": "status",
+							"description": "Status Code tiap request (lihat status code)",
+							"note": ""
+						},
+						{
+							"key": "data",
+							"description": "Berisi data response",
+							"note": "Key ini akan diganti dengan 'error', jika terdapat error."
+						},
+						{
+							"key": "kode_provinsi",
+							"description": "Kode Provinsi",
+							"note": ""
+						},
+						{
+							"key": "nama_provinsi",
+							"description": "Nama Provinsi",
+							"note": "Sudah diurutkan berdasarkan Abjad"
+						}
+					],
+					"example": {
+						"status": "200",
+						"data": [
+							{
+								"kode_provinsi": "11",
+								"nama_provinsi": "ACEH"
+							},
+							{
+								"kode_provinsi": "51",
+								"nama_provinsi": "BALI"
+							},
+							{
+								"kode_provinsi": "36",
+								"nama_provinsi": "BANTEN"
+							},
+							{
+								"kode_provinsi": "17",
+								"nama_provinsi": "BENGKULU"
+							}
+						]
+					}
+				}
+			}
+		},
+		{
+			"section": "get-kabkota",
+			"title": "Referensi data kabupaten / kota",
+			"data": {
+				"method": "get",
+				"url": "/api/Ref/kabupatenKota",
+				"request": {
+					"format": "application/json",
+					"header": [
+						{
+							"key": "api_key",
+							"description": "<span class=\"badge badge-primary\">Token</span>"
+						},
+						{
+							"key": "Content-Type",
+							"description": "application/json"
+						}
+					],
+					"value": [
+						{
+							"key": "kode_provinsi",
+							"description": "Kode Provinsi"
+						}
+					],
+					"example": "/api/Ref/kabupatenKota?kode_provinsi=12"
+				},
+				"response": {
+					"format": "application/json",
+					"value": [
+						{
+							"key": "status",
+							"description": "Status Code tiap request (lihat status code)",
+							"note": ""
+						},
+						{
+							"key": "data",
+							"description": "Berisi data response",
+							"note": "Key ini akan diganti dengan 'error', jika terdapat error."
+						},
+						{
+							"key": "kode_kabupaten_kota",
+							"description": "Kode kabupaten / kota",
+							"note": ""
+						},
+						{
+							"key": "kode_provinsi",
+							"description": "Kode Provinsi",
+							"note": ""
+						},
+						{
+							"key": "nama_kabupaten_kota",
+							"description": "Nama kabuptane / kota",
+							"note": "Sudah diurutkan berdasarkan Abjad"
+						}
+					],
+					"example": {
+						"status": "200",
+						"data": [
+							{
+								"kode_kabupaten_kota": "1208",
+								"kode_provinsi": "12",
+								"nama_kabupaten_kota": "KABUPATEN ASAHAN"
+							},
+							{
+								"kode_kabupaten_kota": "1219",
+								"kode_provinsi": "12",
+								"nama_kabupaten_kota": "KABUPATEN BATU BARA"
+							},
+							{
+								"kode_kabupaten_kota": "1210",
+								"kode_provinsi": "12",
+								"nama_kabupaten_kota": "KABUPATEN DAIRI"
+							},
+							{
+								"kode_kabupaten_kota": "1212",
+								"kode_provinsi": "12",
+								"nama_kabupaten_kota": "KABUPATEN DELI SERDANG"
+							}
+						]
+					}
+				}
+			}
+		},
+		{
+			"section": "get-kecamatan",
+			"title": "Referensi data kecamatan",
+			"data": {
+				"method": "get",
+				"url": "/api/Ref/kecamatan",
+				"request": {
+					"format": "application/json",
+					"header": [
+						{
+							"key": "api_key",
+							"description": "<span class=\"badge badge-primary\">Token</span>"
+						},
+						{
+							"key": "Content-Type",
+							"description": "application/json"
+						}
+					],
+					"value": [
+						{
+							"key": "kode_kabupaten_kota",
+							"description": "Kode kabupaten / kota<br />(ignore jika ingin menampilkan seluruh data kecamatan)"
+						}
+					],
+					"example": "/api/Ref/kecamatan?kode_kabupaten_kota=1109"
+				},
+				"response": {
+					"format": "application/json",
+					"value": [
+						{
+							"key": "status",
+							"description": "Status Code tiap request (lihat status code)",
+							"note": ""
+						},
+						{
+							"key": "data",
+							"description": "Berisi data response",
+							"note": "Key ini akan diganti dengan 'error', jika terdapat error."
+						},
+						{
+							"key": "kode_kecamatan",
+							"description": "Kode Kecamatan",
+							"note": ""
+						},
+						{
+							"key": "kode_kabupaten_kota",
+							"description": "Kode kabupaten / kota",
+							"note": ""
+						},
+						{
+							"key": "nama_kecamatan",
+							"description": "Nama Kecamatan",
+							"note": "Sudah diurutkan berdasarkan Abjad"
+						}
+					],
+					"example": {
+						"status": "200",
+						"data": [
+							{
+								"kode_kecamatan": "1208010",
+								"kode_kebupaten_kota": "1208",
+								"nama_kecamatan": "BANDAR PASIR MANDOGE"
+							},
+							{
+								"kode_kecamatan": "1208020",
+								"kode_kebupaten_kota": "1208",
+								"nama_kecamatan": "BANDAR PULAU"
+							}
+						]
+					}
+				}
+			}
+		},
+		{
+			"section": "status-code",
+			"data": {
+				"status_code": [
+					{
+						"status": "200",
+						"desc": "Sukses"
+					},
+					{
+						"status": "400",
+						"desc": "Bad Request"
+					},
+					{
+						"status": "401",
+						"desc": "Unauthorized (Expired Token/Login Failed)"
+					},
+					{
+						"status": "403",
+						"desc": "Forbidden Access (harus mengirimkan token/permission denied)"
+					},
+					{
+						"status": "404",
+						"desc": "Data tidak ditemukan"
+					},
+					{
+						"status": "500",
+						"desc": "Internal Server Error"
+					},
+					{
+						"status": "false",
+						"desc": "Other"
+					}
+				]
+			}
+		}
+	],
+	"menu": [
+		{
+			"section": "AUTHENTICATION",
+			"data": [
+				{
+					"title": "Token",
+					"slug": "post-token"
+				},
+				{
+					"title": "Refresh Token",
+					"slug": "refresh-token"
+				}
+			]
+		},
+		{
+			"section": "DATA MEMBER",
+			"data": [
+				{
+					"title": "Cek Member",
+					"slug": "post-member-find"
+				}
+			]
+		},
+		{
+			"section": "DATA REFERENSI",
+			"data": [
+				{
+					"title": "Provinsi",
+					"slug": "get-provinsi"
+				},
+				{
+					"title": "Kabupaten / Kota",
+					"slug": "get-kabkota"
+				},
+				{
+					"title": "Kecamatan",
+					"slug": "get-kecamatan"
+				}
+			]
+		},
+		{
+			"section": "LAINNYA",
+			"data": [
+				{
+					"title": "Status Code",
+					"slug": "status-code"
+				}
+			]
+		}
+
+	]
+}

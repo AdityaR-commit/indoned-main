@@ -1,0 +1,4226 @@
+{
+	"info": {
+		"_postman_id": "a5f8cae9-d6fc-48ae-ae93-26c426a75784",
+		"name": "PWMP API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "UPDATE - PROFIL",
+			"item": [
+				{
+					"name": "Update Photo (Profil Mentor/Pembimbing/Peserta)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{PWMP_AUTH_TOKEN}}"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "text/plain"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": []
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "text"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain_pwmp}}/api/user/update_photo",
+							"host": [
+								"{{domain_pwmp}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"update_photo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Photo Anggota (Peserta Only)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{PWMP_AUTH_TOKEN}}"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "text/plain"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": []
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "text"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain_pwmp}}/api/user/update_photo_anggota/{{id_anggota}}",
+							"host": [
+								"{{domain_pwmp}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"update_photo_anggota",
+								"{{id_anggota}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Data Peserta (Kelompok)",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{PWMP_AUTH_TOKEN}}"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"email\": \"test123@gmail.com\",\n\t\"id_jenis_usaha\": \"1\",\n\t\"id_asal_institusi\": \"1\",\n\t\"kelas_usaha\": \"penumbuhan\",\n\t\"no_hp_usaha\": \"08123456789\",\n\t\"bidang_usaha\": \"free text\",\n\t\"komoditas_usaha\": \"free text\",\n\t\"sub_sektor\": \"TAN\",\n\t\"alamat\": \"alamat\",\n\t\"kode_kecamatan\": \"1101010\",\n\t\"tanggal_mulai_usaha\": \"2020-01-01\",\n\t\"deskripsi\": null\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain_pwmp}}/api/user/update_peserta",
+							"host": [
+								"{{domain_pwmp}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"update_peserta"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Data Anggota Kelompok (Individu)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{PWMP_AUTH_TOKEN}}"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{domain_pwmp}}/api/user/detail_anggota/{{id_anggota}}",
+							"host": [
+								"{{domain_pwmp}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"detail_anggota",
+								"{{id_anggota}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Data Anggota Kelompok",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{PWMP_AUTH_TOKEN}}"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"nama\": \"NAMA ANGGOTA\",\n\t\"tempat_lahir\": \"Malang\",\n\t\"tanggal_lahir\": \"1990-01-01\",\n\t\"no_hp\": \"08123456789\",\n\t\"alamat\": \"Jl. Setapak berbatu\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain_pwmp}}/api/user/update_anggota_kelompok/{{id_anggota}}",
+							"host": [
+								"{{domain_pwmp}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"update_anggota_kelompok",
+								"{{id_anggota}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Data Mentor",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{PWMP_AUTH_TOKEN}}"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"nama\": \"NAMA MENTOR\",\n\t\"email\": \"jamal@jamali.com\",\n\t\"no_hp\": \"08123456789\",\n\t\"bidang_usaha\": \"free text\",\n\t\"lama_usaha\": \"20\",\n\t\"pengalaman\": \"Banyak...\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain_pwmp}}/api/user/update_mentor",
+							"host": [
+								"{{domain_pwmp}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"update_mentor"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Data Pembimbing",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{PWMP_AUTH_TOKEN}}"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"nama\": \"NAMA PEMBIMBING\",\n\t\"email\": \"test123333@gmail.com\",\n\t\"no_hp\": \"08123456789\",\n\t\"id_asal_institusi\": \"1\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain_pwmp}}/api/user/update_pembimbing",
+							"host": [
+								"{{domain_pwmp}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"update_pembimbing"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "MASTER - LIST ASAL INSTITUSI",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{PWMP_AUTH_TOKEN}}"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{domain_pwmp}}/api/master/institution",
+							"host": [
+								"{{domain_pwmp}}"
+							],
+							"path": [
+								"api",
+								"master",
+								"institution"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Master",
+			"item": [
+				{
+					"name": "Get Provinsi",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{PWMP_AUTH_TOKEN}}"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{domain_pwmp}}/api/master/province",
+							"host": [
+								"{{domain_pwmp}}"
+							],
+							"path": [
+								"api",
+								"master",
+								"province"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Kabkota by Provinsi",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{PWMP_AUTH_TOKEN}}"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{domain_pwmp}}/api/master/regency?province_id={{id_provinsi}}",
+							"host": [
+								"{{domain_pwmp}}"
+							],
+							"path": [
+								"api",
+								"master",
+								"regency"
+							],
+							"query": [
+								{
+									"key": "province_id",
+									"value": "{{id_provinsi}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Kecamatan by Kabkota",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{PWMP_AUTH_TOKEN}}"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{domain_pwmp}}/api/master/district?regency_id={{id_kabkota}}",
+							"host": [
+								"{{domain_pwmp}}"
+							],
+							"path": [
+								"api",
+								"master",
+								"district"
+							],
+							"query": [
+								{
+									"key": "regency_id",
+									"value": "{{id_kabkota}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Get User",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{PWMP_AUTH_TOKEN}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{domain_pwmp}}/api/user",
+							"host": [
+								"{{domain_pwmp}}"
+							],
+							"path": [
+								"api",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Ubah Ketua (Peserta)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{PWMP_AUTH_TOKEN}}"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id_profile\": \"22\",\n\t\"id_anggota\": \"6\"\n}",
+							"options": {
+								"raw": {}
+							}
+						},
+						"url": {
+							"raw": "{{domain_pwmp}}/api/user/change_leader",
+							"host": [
+								"{{domain_pwmp}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"change_leader"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Hapus Anggota (Peserta)",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{PWMP_AUTH_TOKEN}}"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{domain_pwmp}}/api/user/delete_member/{{id_anggota}}",
+							"host": [
+								"{{domain_pwmp}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"delete_member",
+								"{{id_anggota}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Set Lokasi Map (Latlon) - (Peserta)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{PWMP_AUTH_TOKEN}}"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"latitude\": \"-8.135219\",\n\t\"longitude\": \"113.224254\"\n}",
+							"options": {
+								"raw": {}
+							}
+						},
+						"url": {
+							"raw": "{{domain_pwmp}}/api/user/set_latlon",
+							"host": [
+								"{{domain_pwmp}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"set_latlon"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Keuangan",
+			"item": [
+				{
+					"name": "Get Finance - Pemasukan",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{PWMP_AUTH_TOKEN}}"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{domain_pwmp}}/api/finance/income?offset=0&limit=10",
+							"host": [
+								"{{domain_pwmp}}"
+							],
+							"path": [
+								"api",
+								"finance",
+								"income"
+							],
+							"query": [
+								{
+									"key": "offset",
+									"value": "0"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Finance - Pengeluaran",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{PWMP_AUTH_TOKEN}}"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{domain_pwmp}}/api/finance/outcome?offset=0&limit=10",
+							"host": [
+								"{{domain_pwmp}}"
+							],
+							"path": [
+								"api",
+								"finance",
+								"outcome"
+							],
+							"query": [
+								{
+									"key": "offset",
+									"value": "0"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Finance Detail By ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{PWMP_AUTH_TOKEN}}"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{domain_pwmp}}/api/finance/detail/{{id_transaksi}}",
+							"host": [
+								"{{domain_pwmp}}"
+							],
+							"path": [
+								"api",
+								"finance",
+								"detail",
+								"{{id_transaksi}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Finance Category",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{PWMP_AUTH_TOKEN}}"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{domain_pwmp}}/api/finance/category?trx_type=pemasukan",
+							"host": [
+								"{{domain_pwmp}}"
+							],
+							"path": [
+								"api",
+								"finance",
+								"category"
+							],
+							"query": [
+								{
+									"key": "trx_type",
+									"value": "pemasukan"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Transaction",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{PWMP_AUTH_TOKEN}}"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id_kategori\": \"12\",\n\t\"tipe_transaksi\": \"pengeluaran\",\n\t\"amount\": \"15000\",\n\t\"keterangan\": \"ini keterangan...\",\n\t\"tanggal_transaksi\": \"2020-05-06\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain_pwmp}}/api/finance/create_transaction",
+							"host": [
+								"{{domain_pwmp}}"
+							],
+							"path": [
+								"api",
+								"finance",
+								"create_transaction"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Transaction",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{PWMP_AUTH_TOKEN}}"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id_kategori\": \"11\",\n\t\"tipe_transaksi\": \"pemasukan\",\n\t\"amount\": \"150000\",\n\t\"keterangan\": \"ini keterangan 2aaa222...\",\n\t\"tanggal_transaksi\": \"2020-05-06\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain_pwmp}}/api/finance/edit_transaction/{{id_transaksi}}",
+							"host": [
+								"{{domain_pwmp}}"
+							],
+							"path": [
+								"api",
+								"finance",
+								"edit_transaction",
+								"{{id_transaksi}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Upload File Transaction",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{PWMP_AUTH_TOKEN}}"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "text/plain",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": []
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "text"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain_pwmp}}/api/finance/upload_file/{{id_transaksi}}",
+							"host": [
+								"{{domain_pwmp}}"
+							],
+							"path": [
+								"api",
+								"finance",
+								"upload_file",
+								"{{id_transaksi}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Hapus Keuangan",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{PWMP_AUTH_TOKEN}}"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{domain_pwmp}}/api/finance/delete/{{id_transaksi}}",
+							"host": [
+								"{{domain_pwmp}}"
+							],
+							"path": [
+								"api",
+								"finance",
+								"delete",
+								"{{id_transaksi}}"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Monev - Mentor",
+			"item": [
+				{
+					"name": "Get List",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{PWMP_AUTH_TOKEN}}"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{domain_pwmp}}/api/monev/list?offset=0&limit=10",
+							"host": [
+								"{{domain_pwmp}}"
+							],
+							"path": [
+								"api",
+								"monev",
+								"list"
+							],
+							"query": [
+								{
+									"key": "offset",
+									"value": "0"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "nama_peserta",
+									"value": "sayur",
+									"disabled": true
+								},
+								{
+									"key": "tahun",
+									"value": "2020",
+									"disabled": true
+								},
+								{
+									"key": "id_jenis",
+									"value": "1",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Profile/Anggota by ID Profile",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{PWMP_AUTH_TOKEN}}"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{domain_pwmp}}/api/monev/profile/{{id_profile_peserta}}",
+							"host": [
+								"{{domain_pwmp}}"
+							],
+							"path": [
+								"api",
+								"monev",
+								"profile",
+								"{{id_profile_peserta}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Legalitas by ID Profile",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{PWMP_AUTH_TOKEN}}"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{domain_pwmp}}/api/monev/legalitas/{{id_profile_peserta}}?offset=0&limit=10",
+							"host": [
+								"{{domain_pwmp}}"
+							],
+							"path": [
+								"api",
+								"monev",
+								"legalitas",
+								"{{id_profile_peserta}}"
+							],
+							"query": [
+								{
+									"key": "offset",
+									"value": "0"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Change Status Legalitas",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{PWMP_AUTH_TOKEN}}"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"status\": true\n}"
+						},
+						"url": {
+							"raw": "{{domain_pwmp}}/api/monev/status_legalitas/{{id_legalitas}}",
+							"host": [
+								"{{domain_pwmp}}"
+							],
+							"path": [
+								"api",
+								"monev",
+								"status_legalitas",
+								"{{id_legalitas}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Jejaring by ID Profile",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{PWMP_AUTH_TOKEN}}"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{domain_pwmp}}/api/monev/jejaring/{{id_profile_peserta}}?offset=0&limit=10",
+							"host": [
+								"{{domain_pwmp}}"
+							],
+							"path": [
+								"api",
+								"monev",
+								"jejaring",
+								"{{id_profile_peserta}}"
+							],
+							"query": [
+								{
+									"key": "offset",
+									"value": "0"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Change Status Jejaring",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{PWMP_AUTH_TOKEN}}"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"status\": true\n}"
+						},
+						"url": {
+							"raw": "{{domain_pwmp}}/api/monev/status_jejaring/{{id_jejaring}}",
+							"host": [
+								"{{domain_pwmp}}"
+							],
+							"path": [
+								"api",
+								"monev",
+								"status_jejaring",
+								"{{id_jejaring}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Tenaga Kerja by ID Profile",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{PWMP_AUTH_TOKEN}}"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{domain_pwmp}}/api/monev/tenaga_kerja/{{id_profile_peserta}}?offset=0&limit=10",
+							"host": [
+								"{{domain_pwmp}}"
+							],
+							"path": [
+								"api",
+								"monev",
+								"tenaga_kerja",
+								"{{id_profile_peserta}}"
+							],
+							"query": [
+								{
+									"key": "offset",
+									"value": "0"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Change Status Tenaga Kerja",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{PWMP_AUTH_TOKEN}}"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"status\": true\n}"
+						},
+						"url": {
+							"raw": "{{domain_pwmp}}/api/monev/status_tenaga_kerja/{{id_tenaga_kerja}}",
+							"host": [
+								"{{domain_pwmp}}"
+							],
+							"path": [
+								"api",
+								"monev",
+								"status_tenaga_kerja",
+								"{{id_tenaga_kerja}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Keuangan by ID Profile - Income",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{PWMP_AUTH_TOKEN}}"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{domain_pwmp}}/api/monev/finance_income/{{id_profile_peserta}}?offset=0&limit=10",
+							"host": [
+								"{{domain_pwmp}}"
+							],
+							"path": [
+								"api",
+								"monev",
+								"finance_income",
+								"{{id_profile_peserta}}"
+							],
+							"query": [
+								{
+									"key": "offset",
+									"value": "0"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Keuangan by ID Profile - Outcome",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{PWMP_AUTH_TOKEN}}"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{domain_pwmp}}/api/monev/finance_outcome/{{id_profile_peserta}}?offset=0&limit=10",
+							"host": [
+								"{{domain_pwmp}}"
+							],
+							"path": [
+								"api",
+								"monev",
+								"finance_outcome",
+								"{{id_profile_peserta}}"
+							],
+							"query": [
+								{
+									"key": "offset",
+									"value": "0"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Non-Aktifkan/Aktifkan Peserta",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{PWMP_AUTH_TOKEN}}"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"status\": true\n}",
+							"options": {
+								"raw": {}
+							}
+						},
+						"url": {
+							"raw": "{{domain_pwmp}}/api/monev/activate/23",
+							"host": [
+								"{{domain_pwmp}}"
+							],
+							"path": [
+								"api",
+								"monev",
+								"activate",
+								"23"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Product Catalog",
+			"item": [
+				{
+					"name": "Get List",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{domain_pwmp}}/api/product/catalog?offset=0&limit=10&tahun=2020&id_jenis=1&nama_peserta=sayur&nama_produk=baru",
+							"host": [
+								"{{domain_pwmp}}"
+							],
+							"path": [
+								"api",
+								"product",
+								"catalog"
+							],
+							"query": [
+								{
+									"key": "offset",
+									"value": "0"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "tahun",
+									"value": "2020"
+								},
+								{
+									"key": "id_jenis",
+									"value": "1"
+								},
+								{
+									"key": "nama_peserta",
+									"value": "sayur"
+								},
+								{
+									"key": "nama_produk",
+									"value": "baru"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Product Detail",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{domain_pwmp}}/api/product/detail/{{id_produk}}",
+							"host": [
+								"{{domain_pwmp}}"
+							],
+							"path": [
+								"api",
+								"product",
+								"detail",
+								"{{id_produk}}"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Chat",
+			"item": [
+				{
+					"name": "Get Chat List",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{PWMP_AUTH_TOKEN}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{domain_pwmp}}/api/chat/list",
+							"host": [
+								"{{domain_pwmp}}"
+							],
+							"path": [
+								"api",
+								"chat",
+								"list"
+							],
+							"query": [
+								{
+									"key": "nama",
+									"value": "andi",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Thread",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{PWMP_AUTH_TOKEN}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"sender_id\": \"28\",\n\t\"receiver_id\": \"40\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain_pwmp}}/api/chat/create_thread",
+							"host": [
+								"{{domain_pwmp}}"
+							],
+							"path": [
+								"api",
+								"chat",
+								"create_thread"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Message",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{PWMP_AUTH_TOKEN}}"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{domain_pwmp}}/api/chat/message?thread={{id_message_thread}}",
+							"host": [
+								"{{domain_pwmp}}"
+							],
+							"path": [
+								"api",
+								"chat",
+								"message"
+							],
+							"query": [
+								{
+									"key": "thread",
+									"value": "{{id_message_thread}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Message",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{PWMP_AUTH_TOKEN}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id_thread\": \"5\",\n\t\"sender_id\": \"61\",\n\t\"message\": \"Halo broo 2...\"\n}",
+							"options": {
+								"raw": {}
+							}
+						},
+						"url": {
+							"raw": "{{domain_pwmp}}/api/chat/create_message",
+							"host": [
+								"{{domain_pwmp}}"
+							],
+							"path": [
+								"api",
+								"chat",
+								"create_message"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Upload File",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{PWMP_AUTH_TOKEN}}"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "text/plain"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": []
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "text"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain_pwmp}}/api/chat/upload_file/{{id_message_thread}}",
+							"host": [
+								"{{domain_pwmp}}"
+							],
+							"path": [
+								"api",
+								"chat",
+								"upload_file",
+								"{{id_message_thread}}"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Produk Saya",
+			"item": [
+				{
+					"name": "Get List Produk Saya",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{PWMP_AUTH_TOKEN}}"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{domain_pwmp}}/api/my_product/list?offset=0&limit=10&nama_produk=baru",
+							"host": [
+								"{{domain_pwmp}}"
+							],
+							"path": [
+								"api",
+								"my_product",
+								"list"
+							],
+							"query": [
+								{
+									"key": "offset",
+									"value": "0"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "nama_produk",
+									"value": "baru"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Product Detail By ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{PWMP_AUTH_TOKEN}}"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{domain_pwmp}}/api/my_product/detail/{{id_produk}}",
+							"host": [
+								"{{domain_pwmp}}"
+							],
+							"path": [
+								"api",
+								"my_product",
+								"detail",
+								"{{id_produk}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Product",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{PWMP_AUTH_TOKEN}}"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"nama_produk\": \"Produk Baru yess\",\n\t\"harga_produksi\": \"10000\",\n\t\"harga_jual\": \"11000\",\n\t\"deskripsi\": \"ini deskripsi...\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain_pwmp}}/api/my_product/create",
+							"host": [
+								"{{domain_pwmp}}"
+							],
+							"path": [
+								"api",
+								"my_product",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Upload Foto Product",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{PWMP_AUTH_TOKEN}}"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "text/plain"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": []
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "text"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain_pwmp}}/api/my_product/upload_file/{{id_produk}}",
+							"host": [
+								"{{domain_pwmp}}"
+							],
+							"path": [
+								"api",
+								"my_product",
+								"upload_file",
+								"{{id_produk}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Product",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{PWMP_AUTH_TOKEN}}"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"nama_produk\": \"Produk Baru yess\",\n\t\"harga_produksi\": \"10000\",\n\t\"harga_jual\": \"12000\",\n\t\"deskripsi\": \"ini deskripsi...\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain_pwmp}}/api/my_product/edit/{{id_produk}}",
+							"host": [
+								"{{domain_pwmp}}"
+							],
+							"path": [
+								"api",
+								"my_product",
+								"edit",
+								"{{id_produk}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Hapus Produk Saya",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{PWMP_AUTH_TOKEN}}"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{domain_pwmp}}/api/my_product/delete/{{id_produk}}",
+							"host": [
+								"{{domain_pwmp}}"
+							],
+							"path": [
+								"api",
+								"my_product",
+								"delete",
+								"{{id_produk}}"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Bimtek",
+			"item": [
+				{
+					"name": "Register Bimtek",
+					"item": [
+						{
+							"name": "Get Provinsi (untuk Form Bimtek)",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{PWMP_AUTH_TOKEN}}"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{domain_pwmp}}/api/master/province",
+									"host": [
+										"{{domain_pwmp}}"
+									],
+									"path": [
+										"api",
+										"master",
+										"province"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Kabkota (untuk Form Bimtek)",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{PWMP_AUTH_TOKEN}}"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{domain_pwmp}}/api/master/regency?province_id={{id_provinsi}}",
+									"host": [
+										"{{domain_pwmp}}"
+									],
+									"path": [
+										"api",
+										"master",
+										"regency"
+									],
+									"query": [
+										{
+											"key": "province_id",
+											"value": "{{id_provinsi}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Kecamatan (untuk Form Bimtek)",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{PWMP_AUTH_TOKEN}}"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{domain_pwmp}}/api/master/district?regency_id={{id_kabkota}}",
+									"host": [
+										"{{domain_pwmp}}"
+									],
+									"path": [
+										"api",
+										"master",
+										"district"
+									],
+									"query": [
+										{
+											"key": "regency_id",
+											"value": "{{id_kabkota}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Lokasi Bimtek",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{PWMP_AUTH_TOKEN}}"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{domain_pwmp}}/api/bimtek/lokasi",
+									"host": [
+										"{{domain_pwmp}}"
+									],
+									"path": [
+										"api",
+										"bimtek",
+										"lokasi"
+									],
+									"query": [
+										{
+											"key": "offset",
+											"value": "0",
+											"disabled": true
+										},
+										{
+											"key": "limit",
+											"value": "10",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Register (Create/Edit) - Sama Saja (tidak ada bedanya)",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{PWMP_AUTH_TOKEN}}"
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"id_bimtek\": \"1\",\n\t\"anggota\": [\"5\", \"6\"],\n\t\"kode_kecamatan\": \"5103050\",\n\t\"alamat\": \"Alamat jemput coba saja..\",\n\t\"no_hp_pic\": \"08123456789\",\n\t\"id_lokasi_bimtek\": \"1\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{domain_pwmp}}/api/bimtek/register",
+									"host": [
+										"{{domain_pwmp}}"
+									],
+									"path": [
+										"api",
+										"bimtek",
+										"register"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Detail Registrasi",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{PWMP_AUTH_TOKEN}}"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{domain_pwmp}}/api/bimtek/register_detail/{{id_bimtek}}",
+									"host": [
+										"{{domain_pwmp}}"
+									],
+									"path": [
+										"api",
+										"bimtek",
+										"register_detail",
+										"{{id_bimtek}}"
+									],
+									"query": [
+										{
+											"key": "offset",
+											"value": "0",
+											"disabled": true
+										},
+										{
+											"key": "limit",
+											"value": "10",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Get List Bimtek",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{PWMP_AUTH_TOKEN}}"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{domain_pwmp}}/api/bimtek/list?offset=0&limit=10",
+							"host": [
+								"{{domain_pwmp}}"
+							],
+							"path": [
+								"api",
+								"bimtek",
+								"list"
+							],
+							"query": [
+								{
+									"key": "offset",
+									"value": "0"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "nama",
+									"value": "bimtek 1",
+									"disabled": true
+								},
+								{
+									"key": "kelas",
+									"value": "penumbuhan",
+									"disabled": true
+								},
+								{
+									"key": "tahun",
+									"value": "2020",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Bimtek Detail by ID Bimtek + Status Pendaftaran",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{PWMP_AUTH_TOKEN}}"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{domain_pwmp}}/api/bimtek/detail/{{id_bimtek}}",
+							"host": [
+								"{{domain_pwmp}}"
+							],
+							"path": [
+								"api",
+								"bimtek",
+								"detail",
+								"{{id_bimtek}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get List Materi by ID Bimtek",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{PWMP_AUTH_TOKEN}}"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{domain_pwmp}}/api/bimtek/materi/{{id_bimtek}}?offset=0&limit=10",
+							"host": [
+								"{{domain_pwmp}}"
+							],
+							"path": [
+								"api",
+								"bimtek",
+								"materi",
+								"{{id_bimtek}}"
+							],
+							"query": [
+								{
+									"key": "offset",
+									"value": "0"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "nama",
+									"value": "materi",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Materi Detail by ID Materi",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{PWMP_AUTH_TOKEN}}"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{domain_pwmp}}/api/bimtek/materi_detail/{{id_materi}}",
+							"host": [
+								"{{domain_pwmp}}"
+							],
+							"path": [
+								"api",
+								"bimtek",
+								"materi_detail",
+								"{{id_materi}}"
+							],
+							"query": [
+								{
+									"key": "nama",
+									"value": "materi",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "[ TEST - UBAH STATUS PENGAJUAN BIMTEK MILIK PESERTA YG LOGIN ]",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{PWMP_AUTH_TOKEN}}"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id_bimtek\": \"1\",\n\t\"status\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain_pwmp}}/api/bimtek/test_pengajuan",
+							"host": [
+								"{{domain_pwmp}}"
+							],
+							"path": [
+								"api",
+								"bimtek",
+								"test_pengajuan"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "[ TEST - RESET PENGAJUAN BIMTEK - HAPUS PENGAJUAN ]",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{PWMP_AUTH_TOKEN}}"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id_bimtek\": \"1\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain_pwmp}}/api/bimtek/reset_pengajuan",
+							"host": [
+								"{{domain_pwmp}}"
+							],
+							"path": [
+								"api",
+								"bimtek",
+								"reset_pengajuan"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Legalitas",
+			"item": [
+				{
+					"name": "Get List",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{PWMP_AUTH_TOKEN}}"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{domain_pwmp}}/api/legalitas/list?offset=0&limit=10",
+							"host": [
+								"{{domain_pwmp}}"
+							],
+							"path": [
+								"api",
+								"legalitas",
+								"list"
+							],
+							"query": [
+								{
+									"key": "offset",
+									"value": "0"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Detail By ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{PWMP_AUTH_TOKEN}}"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{domain_pwmp}}/api/legalitas/detail/{{id_legalitas}}",
+							"host": [
+								"{{domain_pwmp}}"
+							],
+							"path": [
+								"api",
+								"legalitas",
+								"detail",
+								"{{id_legalitas}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Legalitas",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{PWMP_AUTH_TOKEN}}"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"nama_legalitas\": \"Legalitas 1\",\n\t\"tertanggal\": \"2020-03-11\",\n\t\"penerbit\": \"PT Elex Media Komputindo\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain_pwmp}}/api/legalitas/create",
+							"host": [
+								"{{domain_pwmp}}"
+							],
+							"path": [
+								"api",
+								"legalitas",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Legalitas",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{PWMP_AUTH_TOKEN}}"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"nama_legalitas\": \"Legalitas 1\",\n\t\"tertanggal\": \"2020-03-11\",\n\t\"penerbit\": \"PT Elex Media Komputindo\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain_pwmp}}/api/legalitas/edit/{{id_legalitas}}",
+							"host": [
+								"{{domain_pwmp}}"
+							],
+							"path": [
+								"api",
+								"legalitas",
+								"edit",
+								"{{id_legalitas}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Upload File",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{PWMP_AUTH_TOKEN}}"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "text/plain"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": []
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "text"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain_pwmp}}/api/legalitas/upload_file/{{id_legalitas}}",
+							"host": [
+								"{{domain_pwmp}}"
+							],
+							"path": [
+								"api",
+								"legalitas",
+								"upload_file",
+								"{{id_legalitas}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Hapus Legalitas",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{PWMP_AUTH_TOKEN}}"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{domain_pwmp}}/api/legalitas/delete/{{id_legalitas}}",
+							"host": [
+								"{{domain_pwmp}}"
+							],
+							"path": [
+								"api",
+								"legalitas",
+								"delete",
+								"{{id_legalitas}}"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Jejaring",
+			"item": [
+				{
+					"name": "Get List",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{PWMP_AUTH_TOKEN}}"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{domain_pwmp}}/api/jejaring/list?offset=0&limit=10",
+							"host": [
+								"{{domain_pwmp}}"
+							],
+							"path": [
+								"api",
+								"jejaring",
+								"list"
+							],
+							"query": [
+								{
+									"key": "offset",
+									"value": "0"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Detail By ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{PWMP_AUTH_TOKEN}}"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{domain_pwmp}}/api/jejaring/detail/{{id_jejaring}}",
+							"host": [
+								"{{domain_pwmp}}"
+							],
+							"path": [
+								"api",
+								"jejaring",
+								"detail",
+								"{{id_jejaring}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Jejaring",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{PWMP_AUTH_TOKEN}}"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"nama_jejaring\": \"Jejaring 1\",\n\t\"tanggal_kerjasama\": \"2020-03-11\",\n\t\"perihal\": \"pemasaran\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain_pwmp}}/api/jejaring/create",
+							"host": [
+								"{{domain_pwmp}}"
+							],
+							"path": [
+								"api",
+								"jejaring",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Jejaring",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{PWMP_AUTH_TOKEN}}"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"nama_jejaring\": \"Jejaring 12\",\n\t\"tanggal_kerjasama\": \"2020-03-11\",\n\t\"perihal\": \"lainnya\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain_pwmp}}/api/jejaring/edit/{{id_jejaring}}",
+							"host": [
+								"{{domain_pwmp}}"
+							],
+							"path": [
+								"api",
+								"jejaring",
+								"edit",
+								"{{id_jejaring}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Upload File",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{PWMP_AUTH_TOKEN}}"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "text/plain"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": []
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "text"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain_pwmp}}/api/jejaring/upload_file/{{id_jejaring}}",
+							"host": [
+								"{{domain_pwmp}}"
+							],
+							"path": [
+								"api",
+								"jejaring",
+								"upload_file",
+								"{{id_jejaring}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Hapus Jejaring",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{PWMP_AUTH_TOKEN}}"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{domain_pwmp}}/api/jejaring/delete/{{id_jejaring}}",
+							"host": [
+								"{{domain_pwmp}}"
+							],
+							"path": [
+								"api",
+								"jejaring",
+								"delete",
+								"{{id_jejaring}}"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Tenaga Kerja",
+			"item": [
+				{
+					"name": "Get List",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{PWMP_AUTH_TOKEN}}"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{domain_pwmp}}/api/tenaga_kerja/list?offset=0&limit=10",
+							"host": [
+								"{{domain_pwmp}}"
+							],
+							"path": [
+								"api",
+								"tenaga_kerja",
+								"list"
+							],
+							"query": [
+								{
+									"key": "offset",
+									"value": "0"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Detail By ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{PWMP_AUTH_TOKEN}}"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{domain_pwmp}}/api/tenaga_kerja/detail/{{id_tenaga_kerja}}",
+							"host": [
+								"{{domain_pwmp}}"
+							],
+							"path": [
+								"api",
+								"tenaga_kerja",
+								"detail",
+								"{{id_tenaga_kerja}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Tenaga Kerja",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{PWMP_AUTH_TOKEN}}"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"nama\": \"Andy F Noya\",\n\t\"tgl_mulai_kerja\": \"2020-03-11\",\n\t\"tgl_selesai_kerja\": \"2020-03-20\",\n\t\"posisi\": \"pemasaran\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain_pwmp}}/api/tenaga_kerja/create",
+							"host": [
+								"{{domain_pwmp}}"
+							],
+							"path": [
+								"api",
+								"tenaga_kerja",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Tenaga Kerja",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{PWMP_AUTH_TOKEN}}"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"nama\": \"Andy F Noya 1\",\n\t\"tgl_mulai_kerja\": \"2020-03-11\",\n\t\"tgl_selesai_kerja\": \"2020-03-21\",\n\t\"posisi\": \"pemasaran\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain_pwmp}}/api/tenaga_kerja/edit/{{id_tenaga_kerja}}",
+							"host": [
+								"{{domain_pwmp}}"
+							],
+							"path": [
+								"api",
+								"tenaga_kerja",
+								"edit",
+								"{{id_tenaga_kerja}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Upload File",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{PWMP_AUTH_TOKEN}}"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "text/plain"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": []
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "text"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain_pwmp}}/api/tenaga_kerja/upload_file/{{id_tenaga_kerja}}",
+							"host": [
+								"{{domain_pwmp}}"
+							],
+							"path": [
+								"api",
+								"tenaga_kerja",
+								"upload_file",
+								"{{id_tenaga_kerja}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Hapus Tenaga Kerja",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{PWMP_AUTH_TOKEN}}"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{domain_pwmp}}/api/tenaga_kerja/delete/{{id_tenaga_kerja}}",
+							"host": [
+								"{{domain_pwmp}}"
+							],
+							"path": [
+								"api",
+								"tenaga_kerja",
+								"delete",
+								"{{id_tenaga_kerja}}"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Magang",
+			"item": [
+				{
+					"name": "Get Status",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{PWMP_AUTH_TOKEN}}"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{domain_pwmp}}/api/magang/status",
+							"host": [
+								"{{domain_pwmp}}"
+							],
+							"path": [
+								"api",
+								"magang",
+								"status"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "1. Create Lokasi",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{PWMP_AUTH_TOKEN}}"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"nama_tempat\": \"PT Globalindo\",\n\t\"alamat\": \"Jl. Indonesia Raya Merdeka Sentosa Selalu Jaya Abadi no. 123456\",\n\t\"skala_usaha\": \"menengah\",\n\t\"jenis_usaha\": \"Agro Bisnis\",\n\t\"nama_pembimbing_eksternal\": \"Gunadi\",\n\t\"no_hp\": \"08123456789\"\n}",
+							"options": {
+								"raw": {}
+							}
+						},
+						"url": {
+							"raw": "{{domain_pwmp}}/api/magang/create_lokasi",
+							"host": [
+								"{{domain_pwmp}}"
+							],
+							"path": [
+								"api",
+								"magang",
+								"create_lokasi"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "1. Edit Lokasi",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{PWMP_AUTH_TOKEN}}"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"nama_tempat\": \"PT Globalindo 2\",\n\t\"alamat\": \"Jl. Indonesia Raya Merdeka Sentosa Selalu Jaya Abadi no. 123456\",\n\t\"skala_usaha\": \"menengah\",\n\t\"jenis_usaha\": \"Agro Bisnis\",\n\t\"nama_pembimbing_eksternal\": \"Gunadi\",\n\t\"no_hp\": \"08123456789\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain_pwmp}}/api/magang/edit_lokasi/{{id_lokasi}}",
+							"host": [
+								"{{domain_pwmp}}"
+							],
+							"path": [
+								"api",
+								"magang",
+								"edit_lokasi",
+								"{{id_lokasi}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "1. Upload File Lokasi",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{PWMP_AUTH_TOKEN}}"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "text/plain"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": []
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "text"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain_pwmp}}/api/magang/file_lokasi/{{id_lokasi}}",
+							"host": [
+								"{{domain_pwmp}}"
+							],
+							"path": [
+								"api",
+								"magang",
+								"file_lokasi",
+								"{{id_lokasi}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "1. Get Detail Lokasi",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{PWMP_AUTH_TOKEN}}"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{domain_pwmp}}/api/magang/lokasi/{{id_lokasi}}",
+							"host": [
+								"{{domain_pwmp}}"
+							],
+							"path": [
+								"api",
+								"magang",
+								"lokasi",
+								"{{id_lokasi}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "2. Create Mentor",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{PWMP_AUTH_TOKEN}}"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"nama\": \"Yos Sudarso\", \n\t\"email\": \"oke@gmail.com\", \n\t\"no_hp\": \"08123456789\", \n\t\"bidang_usaha\": \"Pertanian\", \n\t\"lama_usaha\": \"13\", \n\t\"pengalaman\": \"Makan\"\n}",
+							"options": {
+								"raw": {}
+							}
+						},
+						"url": {
+							"raw": "{{domain_pwmp}}/api/magang/create_mentor",
+							"host": [
+								"{{domain_pwmp}}"
+							],
+							"path": [
+								"api",
+								"magang",
+								"create_mentor"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "2. Edit Mentor",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{PWMP_AUTH_TOKEN}}"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"nama\": \"Yos Sudarso 2\", \n\t\"email\": \"oke@gmail.com\", \n\t\"no_hp\": \"08123456789\", \n\t\"bidang_usaha\": \"Pertanian\", \n\t\"lama_usaha\": \"13\", \n\t\"pengalaman\": \"Makan\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain_pwmp}}/api/magang/edit_mentor/{{id_mentor}}",
+							"host": [
+								"{{domain_pwmp}}"
+							],
+							"path": [
+								"api",
+								"magang",
+								"edit_mentor",
+								"{{id_mentor}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "2. Upload File Mentor",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{PWMP_AUTH_TOKEN}}"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "text/plain"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": []
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "text"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain_pwmp}}/api/magang/file_mentor/{{id_mentor}}",
+							"host": [
+								"{{domain_pwmp}}"
+							],
+							"path": [
+								"api",
+								"magang",
+								"file_mentor",
+								"{{id_mentor}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "2. Get Detail Mentor",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{PWMP_AUTH_TOKEN}}"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{domain_pwmp}}/api/magang/mentor/{{id_mentor}}",
+							"host": [
+								"{{domain_pwmp}}"
+							],
+							"path": [
+								"api",
+								"magang",
+								"mentor",
+								"{{id_mentor}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "3. Create Laporan",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{PWMP_AUTH_TOKEN}}"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": []
+								}
+							],
+							"options": {
+								"raw": {}
+							}
+						},
+						"url": {
+							"raw": "{{domain_pwmp}}/api/magang/create_laporan",
+							"host": [
+								"{{domain_pwmp}}"
+							],
+							"path": [
+								"api",
+								"magang",
+								"create_laporan"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "3. Edit Laporan",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{PWMP_AUTH_TOKEN}}"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": []
+								}
+							],
+							"options": {
+								"raw": {}
+							}
+						},
+						"url": {
+							"raw": "{{domain_pwmp}}/api/magang/edit_laporan/{{id_laporan}}",
+							"host": [
+								"{{domain_pwmp}}"
+							],
+							"path": [
+								"api",
+								"magang",
+								"edit_laporan",
+								"{{id_laporan}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "3. Get Detail Laporan",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{PWMP_AUTH_TOKEN}}"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{domain_pwmp}}/api/magang/laporan/{{id_laporan}}",
+							"host": [
+								"{{domain_pwmp}}"
+							],
+							"path": [
+								"api",
+								"magang",
+								"laporan",
+								"{{id_laporan}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "[ TEST - UBAH STATUS (waiting, revision, approved) ]",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{PWMP_AUTH_TOKEN}}"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"section\": \"lokasi\", \n\t\"id\": \"6b3cc881-1eff-450e-a7d3-547c0daac84c\",\n\t\"status\": \"approved\"\n}",
+							"options": {
+								"raw": {}
+							}
+						},
+						"url": {
+							"raw": "{{domain_pwmp}}/api/magang/change_status",
+							"host": [
+								"{{domain_pwmp}}"
+							],
+							"path": [
+								"api",
+								"magang",
+								"change_status"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "[ TEST - RESET ALL (REMOVE PENDAFTARAN) ]",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{PWMP_AUTH_TOKEN}}"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{domain_pwmp}}/api/magang/reset",
+							"host": [
+								"{{domain_pwmp}}"
+							],
+							"path": [
+								"api",
+								"magang",
+								"reset"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Mentoring",
+			"item": [
+				{
+					"name": "Peserta",
+					"item": [
+						{
+							"name": "Get Status + List",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{PWMP_AUTH_TOKEN}}"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{domain_pwmp}}/api/mentoring/list_for_peserta?offset=0&limit=10&status=terjawab semua&order=desc",
+									"host": [
+										"{{domain_pwmp}}"
+									],
+									"path": [
+										"api",
+										"mentoring",
+										"list_for_peserta"
+									],
+									"query": [
+										{
+											"key": "offset",
+											"value": "0"
+										},
+										{
+											"key": "limit",
+											"value": "10"
+										},
+										{
+											"key": "tgl_awal",
+											"value": "2020-03-20",
+											"disabled": true
+										},
+										{
+											"key": "tgl_akhir",
+											"value": "2020-05-10",
+											"disabled": true
+										},
+										{
+											"key": "status",
+											"value": "terjawab semua"
+										},
+										{
+											"key": "order",
+											"value": "desc"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Detail Mentoring",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{PWMP_AUTH_TOKEN}}"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{domain_pwmp}}/api/mentoring/detail/{{id_mentoring}}",
+									"host": [
+										"{{domain_pwmp}}"
+									],
+									"path": [
+										"api",
+										"mentoring",
+										"detail",
+										"{{id_mentoring}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Permasalahan (Step 1)",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{PWMP_AUTH_TOKEN}}"
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"id_kategori\": \"3\",\n\t\"permasalahan\": \"Saya punya masalah, masalah saya berat sekali..\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{domain_pwmp}}/api/mentoring/create_permasalahan",
+									"host": [
+										"{{domain_pwmp}}"
+									],
+									"path": [
+										"api",
+										"mentoring",
+										"create_permasalahan"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Edit Permasalahan (Step 1)",
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{PWMP_AUTH_TOKEN}}"
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"id_kategori\": \"3\",\n\t\"permasalahan\": \"Masalah saya memang berat..\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{domain_pwmp}}/api/mentoring/edit_permasalahan/{{id_mentoring}}",
+									"host": [
+										"{{domain_pwmp}}"
+									],
+									"path": [
+										"api",
+										"mentoring",
+										"edit_permasalahan",
+										"{{id_mentoring}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Upload File Permasalahan (Step 1)",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{PWMP_AUTH_TOKEN}}"
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "text/plain"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "file",
+											"type": "file",
+											"src": []
+										}
+									],
+									"options": {
+										"raw": {
+											"language": "text"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{domain_pwmp}}/api/mentoring/file_permasalahan/{{id_mentoring}}",
+									"host": [
+										"{{domain_pwmp}}"
+									],
+									"path": [
+										"api",
+										"mentoring",
+										"file_permasalahan",
+										"{{id_mentoring}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add Tindak Lanjut (Step 3)",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{PWMP_AUTH_TOKEN}}"
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"id_mentoring\": \"6973791c-7773-4a83-9330-1cf4485c3f82\",\n\t\"tindak_lanjut\": \"Ok kita coba\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{domain_pwmp}}/api/mentoring/tindak_lanjut",
+									"host": [
+										"{{domain_pwmp}}"
+									],
+									"path": [
+										"api",
+										"mentoring",
+										"tindak_lanjut"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Upload File Tindak Lanjut (Step 4)",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{PWMP_AUTH_TOKEN}}"
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "text/plain"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "file",
+											"type": "file",
+											"src": []
+										}
+									],
+									"options": {
+										"formdata": {}
+									}
+								},
+								"url": {
+									"raw": "{{domain_pwmp}}/api/mentoring/file_tindak_lanjut/{{id_mentoring}}",
+									"host": [
+										"{{domain_pwmp}}"
+									],
+									"path": [
+										"api",
+										"mentoring",
+										"file_tindak_lanjut",
+										"{{id_mentoring}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Hapus Mentoring",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{PWMP_AUTH_TOKEN}}"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{domain_pwmp}}/api/mentoring/delete/{{id_mentoring}}",
+									"host": [
+										"{{domain_pwmp}}"
+									],
+									"path": [
+										"api",
+										"mentoring",
+										"delete",
+										"{{id_mentoring}}"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Pembimbing/Mentor",
+					"item": [
+						{
+							"name": "Get List",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{PWMP_AUTH_TOKEN}}"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{domain_pwmp}}/api/mentoring/list_for_pembimbing_mentor?offset=0&limit=10&status=terjawab semua&order=desc",
+									"host": [
+										"{{domain_pwmp}}"
+									],
+									"path": [
+										"api",
+										"mentoring",
+										"list_for_pembimbing_mentor"
+									],
+									"query": [
+										{
+											"key": "offset",
+											"value": "0"
+										},
+										{
+											"key": "limit",
+											"value": "10"
+										},
+										{
+											"key": "tgl_awal",
+											"value": "2020-03-20",
+											"disabled": true
+										},
+										{
+											"key": "tgl_akhir",
+											"value": "2020-05-10",
+											"disabled": true
+										},
+										{
+											"key": "status",
+											"value": "terjawab semua"
+										},
+										{
+											"key": "order",
+											"value": "desc"
+										},
+										{
+											"key": "nama_peserta",
+											"value": "sayur",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Detail Mentoring",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{PWMP_AUTH_TOKEN}}"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{domain_pwmp}}/api/mentoring/detail/{{id_mentoring}}",
+									"host": [
+										"{{domain_pwmp}}"
+									],
+									"path": [
+										"api",
+										"mentoring",
+										"detail",
+										"{{id_mentoring}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add Saran Solusi (Step 2)",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{PWMP_AUTH_TOKEN}}"
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"id_mentoring\": \"6973791c-7773-4a83-9330-1cf4485c3f82\",\n\t\"saran\": \"Ok kita coba\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{domain_pwmp}}/api/mentoring/saran",
+									"host": [
+										"{{domain_pwmp}}"
+									],
+									"path": [
+										"api",
+										"mentoring",
+										"saran"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Upload File Solusi (Step 2)",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{PWMP_AUTH_TOKEN}}"
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "text/plain"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "file",
+											"type": "file",
+											"src": []
+										}
+									],
+									"options": {
+										"formdata": {}
+									}
+								},
+								"url": {
+									"raw": "{{domain_pwmp}}/api/mentoring/file_saran/{{id_mentoring}}",
+									"host": [
+										"{{domain_pwmp}}"
+									],
+									"path": [
+										"api",
+										"mentoring",
+										"file_saran",
+										"{{id_mentoring}}"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Get Category Mentoring",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{PWMP_AUTH_TOKEN}}"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{domain_pwmp}}/api/mentoring/category",
+							"host": [
+								"{{domain_pwmp}}"
+							],
+							"path": [
+								"api",
+								"mentoring",
+								"category"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "[ TEST - RESET ALL (REMOVE MENTORING) ]",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{PWMP_AUTH_TOKEN}}"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{domain_pwmp}}/api/mentoring/reset",
+							"host": [
+								"{{domain_pwmp}}"
+							],
+							"path": [
+								"api",
+								"mentoring",
+								"reset"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Auth Token",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "55f53c52-1a10-465a-b258-87b59ae3daa8",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"var token = jsonData.data.token;",
+							"",
+							"postman.setGlobalVariable(\"PWMP_AUTH_TOKEN\", token);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"username\": \"peserta1\",\n\t\"password\": \"peserta1\"\n}",
+					"options": {
+						"raw": {}
+					}
+				},
+				"url": {
+					"raw": "{{domain_pwmp}}/api/auth",
+					"host": [
+						"{{domain_pwmp}}"
+					],
+					"path": [
+						"api",
+						"auth"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

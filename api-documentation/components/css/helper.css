@@ -1,0 +1,269 @@
+/* HELPER */
+.select2-hidden-accessible {
+  top: 57px !important;
+}
+
+/* GENERAL */
+table.th-middle thead > tr > th {
+  vertical-align: middle;
+}
+table.no-border tbody > tr > td {
+	border-top: 0px !important;
+}
+.head-section{
+	width: 150px;
+}
+.hid {
+	display: none;
+}
+.center {
+  text-align: center;
+}
+.right {
+  text-align: right;
+}
+/* GENERAL */
+
+/* ELEMENTS PUSH */
+.mt-0 {
+  margin-top: 0px !important;
+}
+.mt-5 {
+  margin-top: 5px !important;
+}
+.mt-10 {
+  margin-top: 10px !important;
+}
+.mt-15 {
+  margin-top: 15px !important;
+}
+.mt-20 {
+  margin-top: 20px !important;
+}
+.mt-25 {
+  margin-top: 25px !important;
+}
+.mt-30 {
+  margin-top: 30px !important;
+}
+.mt-40 {
+  margin-top: 40px !important;
+}
+.mt-50 {
+  margin-top: 50px !important;
+}
+.mt-75 {
+  margin-top: 75px !important;
+}
+.mt-85 {
+  margin-top: 85px !important;
+}
+.mt-90 {
+  margin-top: 90px !important;
+}
+.mt-150 {
+  margin-top: 150px !important;
+}
+.mr-0 {
+  margin-right: 0px !important;
+}
+.mr-5 {
+  margin-right: 5px !important;
+}
+.mr-10 {
+  margin-right: 10px !important;
+}
+.mr-15 {
+  margin-right: 15px !important;
+}
+.mr-20 {
+  margin-right: 20px !important;
+}
+.mr-25 {
+  margin-right: 25px !important;
+}
+.mr-30 {
+  margin-right: 30px !important;
+}
+.mr-80 {
+  margin-right: 80px !important;
+}
+.ml-0 {
+  margin-left: 0px !important;
+}
+.ml-5 {
+  margin-left: 5px !important;
+}
+.ml-10 {
+  margin-left: 10px !important;
+}
+.ml-15 {
+  margin-left: 15px !important;
+}
+.ml-20 {
+  margin-left: 20px !important;
+}
+.ml-25 {
+  margin-left: 25px !important;
+}
+.ml-30 {
+  margin-left: 30px !important;
+}
+.ml-80 {
+  margin-left: 80px !important;
+}
+.mb-0 {
+  margin-bottom: 0px !important;
+}
+.mb-5 {
+  margin-bottom: 5px !important;
+}
+.mb-10 {
+  margin-bottom: 10px !important;
+}
+.mb-15 {
+  margin-bottom: 15px !important;
+}
+.mb-20 {
+  margin-bottom: 20px !important;
+}
+.mb-25 {
+  margin-bottom: 25px !important;
+}
+.mb-30 {
+  margin-bottom: 30px !important;
+}
+.margin-0 {
+  margin: 0px !important;
+}
+.padding-0 {
+  padding: 0px !important;
+}
+.padding-2 {
+  padding: 2px !important;
+}
+.padding-5 {
+  padding: 5px !important;
+}
+.padding-20 {
+  padding: 20px !important;
+}
+.pt-20 {
+  padding-top: 20px !important;
+}
+.pt-40 {
+  padding-top: 40px !important;
+}
+.pb-0 {
+  padding-bottom: 0px !important;
+}
+.pb-40 {
+  padding-bottom: 40px !important;
+}
+.pb-100 {
+  padding-bottom: 100px !important;
+}
+.pl-10 {
+  padding-left: 10px !important;
+}
+.pr-10 {
+  padding-right: 10px !important;
+}
+.pl-20 {
+  padding-left: 20px !important;
+}
+.pr-20 {
+  padding-right: 20px !important;
+}
+.pl-30 {
+  padding-left: 30px !important;
+}
+.pr-30 {
+  padding-right: 30px !important;
+}
+.pr-90 {
+  padding-right: 90px !important;
+}
+.codebox{
+	max-height:300px;overflow-y:auto;
+}
+.textbox{
+	max-height:300px;
+	overflow-y:auto;
+	word-break:break-all;
+	padding:9px;
+	background-color:#f5f5f5;
+	border:1px solid #ccc;
+	border-radius:4px;
+}
+.bg-onGray{
+	background-color: #eeeeee !important;
+}
+.img-sm-rounded{
+	height: 80px;
+	border-radius: 50px;
+}
+.rounded{
+	border-radius: 5px;
+}
+
+.loader {
+    border: 13px solid #f3f3f3; /* Light grey */
+    border-top: 13px solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.main-header {
+  background-color: #ffffff;
+  padding: 20px 20px 20px 20px;
+}
+
+.jsonview .string {
+  color: black !important;
+  font-size: 12px;
+}
+
+.jsonview .prop {
+  color: black !important;
+  font-size: 12px;
+}
+
+.jsonview .bool {
+  color: black !important;
+  font-size: 12px;
+}
+
+.jsonview .num {
+  color: black !important;
+  font-size: 12px;
+}
+
+.jsonview .null {
+  color: black !important;
+  font-size: 12px;
+}
+
+#noContent {
+  width: 90vw;
+  display: table;
+  margin: auto;
+}
+
+.noContent {
+  margin-top: 100px;
+  text-align: center;
+}
+
+#onMobile {
+  width: 90vw;
+  display: table;
+  margin: auto;
+}

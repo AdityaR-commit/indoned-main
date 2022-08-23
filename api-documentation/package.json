@@ -1,0 +1,11 @@
+{
+  "name": "pwmp-swagger",
+  "version": "1.0.0",
+  "main": "index.html",
+  "repository": "https://github.com/alfannevo/pwmp-swagger.git",
+  "author": "Alfan <ahmad.alpan@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "php -S localhost:8085"
+  }
+}
